@@ -61,3 +61,36 @@ body {
   height: 100vh; 
   overflow: hidden; 
 }
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #131215; 
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+.home-link {
+  font-size: 24px;
+  color: #8A7D8C;
+  cursor: pointer;
+  background: linear-gradient(to left, #8A7D8C, #EAD5F2, #B3B6F2, #F2F2F2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding: 0 20px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  z-index: 4;
+}
+
+.home-link:hover {
+  background: linear-gradient(to left, #8A7D8C, #EAD5F2, #B3B6F2, #F2F2F2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.7);
+  z-index: 4; 
+}

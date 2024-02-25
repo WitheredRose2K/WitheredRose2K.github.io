@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const petal = document.createElement("img");
     petal.classList.add("petal");
     petal.src = "root/petal_art.png"; 
-	petal.style.width = "15px"; 
+    petal.style.width = "15px"; 
     petal.style.height = "30px"; 
     petal.style.top = Math.random() * 100 + "vh";
     petal.style.left = Math.random() * 100 + "vw";
@@ -50,6 +50,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     petalContainer.appendChild(petal);
   }
+  
+  const topBar = document.querySelector(".top-bar");
+  const homeLink = document.createElement("div");
+  homeLink.classList.add("home-link");
+  homeLink.textContent = "Home";
+  homeLink.addEventListener("click", function() {
+    window.location.href = "https://witheredrose2k.github.io/";
+  });
+  topBar.appendChild(homeLink);
 });
 
 function colorToHue(color) {
