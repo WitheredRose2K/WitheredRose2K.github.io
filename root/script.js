@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
   for (let i = 0; i < numPetals; i++) {
     const petal = document.createElement("img");
     petal.classList.add("petal");
-    petal.src = "petal_art.png"; // Replace with the path to your petal image
+    petal.src = "root/petal_art.png"; // Replace with the path to your petal image
 	petal.style.width = "15px"; // Adjust size as needed
     petal.style.height = "30px"; // Adjust size as needed
     petal.style.top = Math.random() * 100 + "vh";
