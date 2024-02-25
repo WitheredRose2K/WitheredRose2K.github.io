@@ -27,16 +27,16 @@ body {
 
 .glitch:before {
   left: 2px;
-  text-shadow: -1px 0 red;
+  text-shadow: -1px 0 #99ff99, 1px 0 #ff9999;
   clip: rect(44px, 550px, 54px, 0);
-  animation: glitch1 0.5s infinite linear alternate-reverse;
+  animation: glitch1 1s infinite linear alternate-reverse;
 }
 
 .glitch:after {
   left: -2px;
-  text-shadow: 1px 0 blue;
+  text-shadow: 1px 0 #99ccff, -1px 0 #ffcc99;
   clip: rect(24px, 550px, 34px, 0);
-  animation: glitch2 0.3s infinite linear alternate-reverse;
+  animation: glitch2 0.7s infinite linear alternate-reverse;
 }
 
 @keyframes glitch1 {
