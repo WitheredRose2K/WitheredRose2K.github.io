@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const petal = document.createElement("img");
     petal.classList.add("petal");
     petal.src = "petal_art.png"; // Replace with the path to your petal image
-    petal.style.width = "15px"; // Adjust size as needed
+	petal.style.width = "15px"; // Adjust size as needed
     petal.style.height = "30px"; // Adjust size as needed
     petal.style.top = Math.random() * 100 + "vh";
     petal.style.left = Math.random() * 100 + "vw";
@@ -47,24 +47,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     petal.style.filter = `brightness(70%) saturate(100%) sepia(0%) hue-rotate(${colorToHue(randomColor)}deg)`;
-    petal.style.transform = `rotate(30deg)`; // Rotate the petal sideways
-
-    // Set z-index of petals to ensure they are always behind the text
-    petal.style.zIndex = "0";
 
     petalContainer.appendChild(petal);
   }
-
-  // Set z-index of text characters to ensure they are always above the petals
-  const glitchText = document.querySelector(".glitch");
-  const roseText = document.querySelector(".rose");
-  const witheredText = document.querySelector(".withered");
-
-  glitchText.style.zIndex = "1";
-  roseText.style.zIndex = "1";
-  witheredText.style.zIndex = "1";
 });
-
 
 function colorToHue(color) {
   // Convert hex color to RGB
