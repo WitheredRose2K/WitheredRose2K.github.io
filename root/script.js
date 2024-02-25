@@ -15,34 +15,34 @@ document.addEventListener("mousemove", function(event) {
   glitchText.style.transform = "translate(" + (distanceFromCenterX / 50) + "px, " + (distanceFromCenterY / 50) + "px)";
   roseText.style.transform = "translate(" + (distanceFromCenterX / 50) + "px, " + (distanceFromCenterY / 50) + "px)";
 
-  const mouseX = event.clientX / window.innerWidth; // Get mouse X position as a percentage of window width
-  const mouseY = event.clientY / window.innerHeight; // Get mouse Y position as a percentage of window height
+  const mouseX = event.clientX / window.innerWidth; 
+  const mouseY = event.clientY / window.innerHeight;
   
   const petals = document.querySelectorAll('.petal');
   petals.forEach(function(petal) {
-    const windStrength = 0.05; // Adjust the wind strength as needed
-    const offsetX = (mouseX - 0.5) * windStrength; // Calculate horizontal offset based on mouse X position
-    const offsetY = (mouseY - 0.5) * windStrength; // Calculate vertical offset based on mouse Y position
-    const rotation = Math.atan2(offsetY, offsetX); // Calculate rotation angle based on offset
+    const windStrength = 0.05; 
+    const offsetX = (mouseX - 0.5) * windStrength;
+    const offsetY = (mouseY - 0.5) * windStrength;
+    const rotation = Math.atan2(offsetY, offsetX); 
     
-    petal.style.transform = `translate(${offsetX * 100}px, ${offsetY * 100}px) rotate(${rotation}rad)`; // Apply transform
+    petal.style.transform = `translate(${offsetX * 100}px, ${offsetY * 100}px) rotate(${rotation}rad)`; 
   });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
   const petalContainer = document.querySelector(".petal-container");
-  const numPetals = 50; // Adjust as needed
+  const numPetals = 50; 
   const colors = ["#8A7D8C", "#EAD5F2", "#B3B6F2", "#F2F2F2"];
 
   for (let i = 0; i < numPetals; i++) {
     const petal = document.createElement("img");
     petal.classList.add("petal");
-    petal.src = "root/petal_art.png"; // Replace with the path to your petal image
-	petal.style.width = "15px"; // Adjust size as needed
-    petal.style.height = "30px"; // Adjust size as needed
+    petal.src = "root/petal_art.png"; 
+	petal.style.width = "15px"; 
+    petal.style.height = "30px"; 
     petal.style.top = Math.random() * 100 + "vh";
     petal.style.left = Math.random() * 100 + "vw";
-    const animationDuration = Math.random() * 6 + 5; // Adjust animation duration
+    const animationDuration = Math.random() * 6 + 5; 
     petal.style.animation = `fall ${animationDuration}s linear infinite`;
 
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -53,14 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function colorToHue(color) {
-  // Convert hex color to RGB
   const hex = color.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (m, r, g, b) => "#" + r + r + g + g + b + b);
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   let r = parseInt(result[1], 16);
   let g = parseInt(result[2], 16);
   let b = parseInt(result[3], 16);
 
-  // Convert RGB to HSL
   r /= 255;
   g /= 255;
   b /= 255;
@@ -80,5 +78,5 @@ function colorToHue(color) {
     }
     h /= 6;
   }
-  return Math.round(h * 360); // Convert HSL hue to degrees
+  return Math.round(h * 360); 
 }

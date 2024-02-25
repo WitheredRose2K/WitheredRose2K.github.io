@@ -20,7 +20,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   padding: 5px 10px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Adding glow effect */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }
 
 .rose {
@@ -34,32 +34,30 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   padding: 5px 10px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Adding glow effect */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }
 
-/* Styles for Petals */
 .petal {
   position: absolute;
-  width: 20px; /* Adjust size as needed */
-  height: 40px; /* Adjust size as needed */
+  width: 20px; 
+  height: 40px; 
   pointer-events: none;
 }
 
-/* Animation for Petals Falling */
 @keyframes fall {
   0% {
-    transform: translateY(-10vh); /* Start above the viewport */
+    transform: translateY(-10vh); 
   }
   100% {
-    transform: translateY(110vh); /* End below the viewport */
+    transform: translateY(110vh); 
   }
 }
 
 .petal-container {
-  position: fixed; /* Use fixed positioning */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Use viewport units */
-  height: 100vh; /* Use viewport units */
-  overflow: hidden; /* Hide overflow */
+  width: 100vw;
+  height: 100vh; 
+  overflow: hidden; 
 }
