@@ -12,7 +12,7 @@
   --link-font-size: 1.25vw;
   --link-padding: 0 0vw;
   --hover-text-shadow: 0 0 0.5208125vw rgba(255, 255, 255, 0.7), 0 0 1.041625vw rgba(255, 255, 255, 0.7);
-  --rose-position-bottom: min(calc(-1.3vh + 1px), 14.04px);
+  --rose-position-bottom: min(calc(-1.7vh + 1px), -18.36px);
   --rose-position-right: -0.05vw;
 }
 
