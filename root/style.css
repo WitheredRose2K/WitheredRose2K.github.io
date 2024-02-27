@@ -5,7 +5,11 @@
   --text-shadow: 0 0 1vw rgba(255, 255, 255, 0.7);
   --position-bottom: -1.3vh;
   --position-right: -0.05vw;
-  --petal-size: 1.5vw 3vw;
+  --petal-min-size-x: 28.8px; 
+  --petal-min-size-y: 57.6px;
+  --petal-size-x: 1.5vw;
+  --petal-size-y: 3vw;
+  --petal-size: clamp(var(--petal-min-size-x), var(--petal-size-x), var(--petal-size-y)) clamp(var(--petal-min-size-y), var(--petal-size-y), var(--petal-size-y));
   --bar-height: 6vh;
   --link-font-size: 1.25vw;
   --link-padding: 0 4vw;
