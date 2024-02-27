@@ -1,15 +1,15 @@
 :root {
-  --glitch-font-size: 2.5vw;
-  --rose-font-size: 1.5vw;
+  --glitch-font-size: 3vw;
+  --rose-font-size: 2vw;
+  --rose-position-bottom: -2vh;
+  --rose-position-right: -0.05vw;
   --padding: 1vh 2vw;
   --text-shadow: 0 0 1vw rgba(255, 255, 255, 0.7);
-  --position-bottom: -1.3vh;
-  --position-right: -0.05vw;
-  --petal-min-size-x: 28.8px; 
-  --petal-min-size-y: 57.6px;
-  --petal-size-x: 1.5vw;
-  --petal-size-y: 3vw;
-  --petal-size: clamp(var(--petal-min-size-x), var(--petal-size-x), var(--petal-size-y)) clamp(var(--petal-min-size-y), var(--petal-size-y), var(--petal-size-y));
+  --petal-min-size-x: 432px; 
+  --petal-min-size-y: 486px;
+  --petal-max-size-x: 18%;
+  --petal-max-size-y: 40.5%;
+  --petal-size: min(var(--petal-min-size-x), var(--petal-max-size-x)) min(var(--petal-min-size-y), var(--petal-max-size-y));
   --bar-height: 6vh;
   --link-font-size: 1.25vw;
   --link-padding: 0 4vw;
@@ -47,14 +47,15 @@ body {
 
 .rose {
   position: absolute;
-  bottom: var(--position-bottom);
-  right: var(--position-right);
+  bottom: var(--rose-position-bottom);
+  right: var(--rose-position-right);
   font-size: var(--rose-font-size);
 }
 
 .petal {
   position: absolute;
-  width: var(--petal-size);
+  width: var(--petal-size-x);
+  height: var(--petal-size-y);
   pointer-events: none;
 }
 

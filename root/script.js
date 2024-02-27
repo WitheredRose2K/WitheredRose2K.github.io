@@ -15,12 +15,39 @@ document.addEventListener("DOMContentLoaded", function () {
   const petalContainer = document.querySelector(".petal-container");
   const colors = ["#8A7D8C", "#EAD5F2", "#B3B6F2", "#F2F2F2"];
 
+  const petalMinSizeX = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--petal-min-size-x'));
+  const petalMinSizeY = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--petal-min-size-y'));
+  const petalMaxSizeX = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--petal-max-size-x'));
+  const petalMaxSizeY = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--petal-max-size-y'));
+
+  const petalSize = getComputedStyle(document.documentElement).getPropertyValue('--petal-size').trim().split(' ');
+  const petalSizeX = parseFloat(petalSize[0]);
+  const petalSizeY = parseFloat(petalSize[1]);
+
   for (let i = 0; i < 50; i++) {
     const petal = new Image();
     petal.classList.add("petal");
     petal.src = "root/petal_art.png";
-    const randomStyle = `width: 1.2%; height: 2.7%; top: ${Math.random() * 100}vh; left: ${Math.random() * 100}vw;`;
-    petal.style.cssText = `${randomStyle} animation: fall ${Math.random() * 6 + 5}s linear infinite; filter: brightness(70%) saturate(100%) sepia(0%) hue-rotate(${colorToHue(colors[Math.floor(Math.random() * colors.length)])}deg);`;
+
+    // Random position
+    const randomX = Math.random() * 100;
+    const randomY = Math.random() * 100;
+
+    // Calculate rotation
+    const mouseX = (randomX / window.innerWidth - 0.5) * 0.05;
+    const mouseY = (randomY / window.innerHeight - 0.5) * 0.05;
+    const rotation = Math.atan2(mouseY, mouseX);
+
+    // Apply styles
+    petal.style.width = `${petalSizeX}px`;
+    petal.style.height = `${petalSizeY}px`;
+    petal.style.top = `${randomY}vh`;
+    petal.style.left = `${randomX}vw`;
+    petal.style.transform = `translate(-50%, -50%) rotate(${rotation}rad)`;
+
+    petal.style.filter = `brightness(70%) saturate(100%) sepia(0%) hue-rotate(${colorToHue(colors[Math.floor(Math.random() * colors.length)])}deg)`;
+    petal.style.animation = `fall ${Math.random() * 6 + 5}s linear infinite`;
+
     petalContainer.appendChild(petal);
   }
 
