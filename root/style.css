@@ -1,8 +1,22 @@
+:root {
+  --glitch-font-size: 2.5vw;
+  --rose-font-size: 1.5vw;
+  --padding: 1vh 2vw;
+  --text-shadow: 0 0 1vw rgba(255, 255, 255, 0.7);
+  --position-bottom: -1.3vh;
+  --position-right: -0.05vw;
+  --petal-size: 1.5vw 3vw;
+  --bar-height: 6vh;
+  --link-font-size: 1.25vw;
+  --link-padding: 0 4vw;
+  --hover-text-shadow: 0 0 0.5208125vw rgba(255, 255, 255, 0.7), 0 0 1.041625vw rgba(255, 255, 255, 0.7);
+}
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   background-color: #0D0D0D;
 }
@@ -12,35 +26,31 @@ body {
   text-align: right;
 }
 
-.glitch {
-  font-size: 2.5vw; /* Adjust font size relative to viewport width */
+.glitch,
+.rose {
   font-weight: bold;
   color: transparent;
   background: linear-gradient(to left, #8A7D8C, #EAD5F2, #B3B6F2, #F2F2F2);
   -webkit-background-clip: text;
   background-clip: text;
-  padding: 1vh 2vw; /* Adjust padding relative to viewport */
-  text-shadow: 0 0 1vw rgba(255, 255, 255, 0.7); /* Adjust text shadow relative to viewport */
+  padding: var(--padding);
+  text-shadow: var(--text-shadow);
+}
+
+.glitch {
+  font-size: var(--glitch-font-size);
 }
 
 .rose {
   position: absolute;
-  bottom: -1.3vh; /* Adjust position relative to viewport */
-  right: -0.05vw; /* Adjust position relative to viewport */
-  font-size: 1.5vw; /* Adjust font size relative to viewport width */
-  font-weight: bold;
-  color: transparent;
-  background: linear-gradient(to left, #8A7D8C, #EAD5F2, #B3B6F2, #F2F2F2);
-  -webkit-background-clip: text;
-  background-clip: text;
-  padding: 1vh 2vw; /* Adjust padding relative to viewport */
-  text-shadow: 0 0 1vw rgba(255, 255, 255, 0.7); /* Adjust text shadow relative to viewport */
+  bottom: var(--position-bottom);
+  right: var(--position-right);
+  font-size: var(--rose-font-size);
 }
 
 .petal {
   position: absolute;
-  width: 1.5vw; /* Adjust width relative to viewport */
-  height: 3vw; /* Adjust height relative to viewport */
+  width: var(--petal-size);
   pointer-events: none;
 }
 
@@ -53,22 +63,22 @@ body {
   }
 }
 
-.petal-container {
+.petal-container,
+.top-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
+}
+
+.petal-container {
   height: 100vh;
   overflow: hidden;
 }
 
 .top-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
+  height: var(--bar-height);
   background-color: #131215;
-  height: 6vh; /* Adjust height relative to viewport */
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,21 +86,17 @@ body {
 }
 
 .home-link {
-  font-size: 1.25vw; /* Adjust font size relative to viewport width */
+  font-size: var(--link-font-size);
   color: #8A7D8C;
   cursor: pointer;
   background: linear-gradient(to left, #8A7D8C, #EAD5F2, #B3B6F2, #F2F2F2);
   -webkit-background-clip: text;
   background-clip: text;
-  padding: 0 4vw; /* Adjust padding relative to viewport */
-  text-shadow: 0 0 0.5208125vw rgba(255, 255, 255, 0.7); /* Adjust text shadow relative to viewport */
+  padding: var(--link-padding);
+  text-shadow: 0 0 0.5208125vw rgba(255, 255, 255, 0.7);
   z-index: 4;
 }
 
 .home-link:hover {
-  background: linear-gradient(to left, #8A7D8C, #EAD5F2, #B3B6F2, #F2F2F2);
-  -webkit-background-clip: text;
-  background-clip: text;
-  text-shadow: 0 0 0.5208125vw rgba(255, 255, 255, 0.7), 0 0 1.041625vw rgba(255, 255, 255, 0.7); /* Adjust text shadow relative to viewport */
-  z-index: 4;
+  text-shadow: var(--hover-text-shadow);
 }
