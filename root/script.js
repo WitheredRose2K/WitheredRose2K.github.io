@@ -1,48 +1,47 @@
-// JavaScript
 document.addEventListener("mousemove", function(event) {
-  const glitchText = document.querySelector(".glitch");
-  const roseText = document.querySelector(".rose");
-
-  const rectGlitch = glitchText.getBoundingClientRect();
-  const rectRose = roseText.getBoundingClientRect();
-
-  const centerX = (rectGlitch.left + rectRose.left + rectGlitch.width + rectRose.width) / 2;
-  const centerY = (rectGlitch.top + rectRose.top + rectGlitch.height + rectRose.height) / 2;
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
 
   const distanceFromCenterX = event.clientX - centerX;
   const distanceFromCenterY = event.clientY - centerY;
 
-  glitchText.style.transform = "translate(" + (distanceFromCenterX / 50) + "px, " + (distanceFromCenterY / 50) + "px)";
-  roseText.style.transform = "translate(" + (distanceFromCenterX / 50) + "px, " + (distanceFromCenterY / 50) + "px)";
+  const translateXPercent = (distanceFromCenterX / window.innerWidth) * 50;
+  const translateYPercent = (distanceFromCenterY / window.innerHeight) * 50;
 
-  const mouseX = event.clientX / window.innerWidth; 
+  const glitchText = document.querySelector(".glitch");
+  const roseText = document.querySelector(".rose");
+
+  glitchText.style.transform = `translate(${translateXPercent}%, ${translateYPercent}%)`;
+  roseText.style.transform = `translate(${translateXPercent}%, ${translateYPercent}%)`;
+
+  const mouseX = event.clientX / window.innerWidth;
   const mouseY = event.clientY / window.innerHeight;
-  
+
   const petals = document.querySelectorAll('.petal');
   petals.forEach(function(petal) {
-    const windStrength = 0.05; 
+    const windStrength = 0.05;
     const offsetX = (mouseX - 0.5) * windStrength;
     const offsetY = (mouseY - 0.5) * windStrength;
-    const rotation = Math.atan2(offsetY, offsetX); 
-    
-    petal.style.transform = `translate(${offsetX * 100}px, ${offsetY * 100}px) rotate(${rotation}rad)`; 
+    const rotation = Math.atan2(offsetY, offsetX);
+
+    petal.style.transform = `translate(${offsetX * 50}%, ${offsetY * 50}%) rotate(${rotation}rad)`;
   });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
   const petalContainer = document.querySelector(".petal-container");
-  const numPetals = 50; 
+  const numPetals = 50;
   const colors = ["#8A7D8C", "#EAD5F2", "#B3B6F2", "#F2F2F2"];
 
   for (let i = 0; i < numPetals; i++) {
     const petal = document.createElement("img");
     petal.classList.add("petal");
-    petal.src = "root/petal_art.png"; 
-    petal.style.width = "15px"; 
-    petal.style.height = "30px"; 
+    petal.src = "root/petal_art.png";
+    petal.style.width = "1.2%";
+    petal.style.height = "2.7%";
     petal.style.top = Math.random() * 100 + "vh";
     petal.style.left = Math.random() * 100 + "vw";
-    const animationDuration = Math.random() * 6 + 5; 
+    const animationDuration = Math.random() * 6 + 5;
     petal.style.animation = `fall ${animationDuration}s linear infinite`;
 
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -50,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     petalContainer.appendChild(petal);
   }
-  
+
   const topBar = document.querySelector(".top-bar");
   const homeLink = document.createElement("div");
   homeLink.classList.add("home-link");
@@ -87,5 +86,5 @@ function colorToHue(color) {
     }
     h /= 6;
   }
-  return Math.round(h * 360); 
+  return Math.round(h * 360);
 }

@@ -13,43 +13,43 @@ body {
 }
 
 .glitch {
-  font-size: 64px;
+  font-size: 2.5vw; /* Adjust font size relative to viewport width */
   font-weight: bold;
   color: transparent;
   background: linear-gradient(to left, #8A7D8C, #EAD5F2, #B3B6F2, #F2F2F2);
   -webkit-background-clip: text;
   background-clip: text;
-  padding: 5px 10px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  padding: 1vh 2vw; /* Adjust padding relative to viewport */
+  text-shadow: 0 0 1vw rgba(255, 255, 255, 0.7); /* Adjust text shadow relative to viewport */
 }
 
 .rose {
   position: absolute;
-  bottom: -10px;
-  right: -2px;
-  font-size: 24px;
+  bottom: -1.3vh; /* Adjust position relative to viewport */
+  right: -0.05vw; /* Adjust position relative to viewport */
+  font-size: 1.5vw; /* Adjust font size relative to viewport width */
   font-weight: bold;
   color: transparent;
   background: linear-gradient(to left, #8A7D8C, #EAD5F2, #B3B6F2, #F2F2F2);
   -webkit-background-clip: text;
   background-clip: text;
-  padding: 5px 10px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  padding: 1vh 2vw; /* Adjust padding relative to viewport */
+  text-shadow: 0 0 1vw rgba(255, 255, 255, 0.7); /* Adjust text shadow relative to viewport */
 }
 
 .petal {
   position: absolute;
-  width: 20px; 
-  height: 40px; 
+  width: 1.5vw; /* Adjust width relative to viewport */
+  height: 3vw; /* Adjust height relative to viewport */
   pointer-events: none;
 }
 
 @keyframes fall {
   0% {
-    transform: translateY(-10vh); 
+    transform: translateY(-10vh);
   }
   100% {
-    transform: translateY(110vh); 
+    transform: translateY(110vh);
   }
 }
 
@@ -58,16 +58,16 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh; 
-  overflow: hidden; 
+  height: 100vh;
+  overflow: hidden;
 }
 
 .top-bar {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #131215; 
-  height: 60px;
+  background-color: #131215;
+  height: 6vh; /* Adjust height relative to viewport */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -76,14 +76,14 @@ body {
 }
 
 .home-link {
-  font-size: 24px;
+  font-size: 1.25vw; /* Adjust font size relative to viewport width */
   color: #8A7D8C;
   cursor: pointer;
   background: linear-gradient(to left, #8A7D8C, #EAD5F2, #B3B6F2, #F2F2F2);
   -webkit-background-clip: text;
   background-clip: text;
-  padding: 0 20px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  padding: 0 4vw; /* Adjust padding relative to viewport */
+  text-shadow: 0 0 0.5208125vw rgba(255, 255, 255, 0.7); /* Adjust text shadow relative to viewport */
   z-index: 4;
 }
 
@@ -91,6 +91,6 @@ body {
   background: linear-gradient(to left, #8A7D8C, #EAD5F2, #B3B6F2, #F2F2F2);
   -webkit-background-clip: text;
   background-clip: text;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.7);
-  z-index: 4; 
+  text-shadow: 0 0 0.5208125vw rgba(255, 255, 255, 0.7), 0 0 1.041625vw rgba(255, 255, 255, 0.7); /* Adjust text shadow relative to viewport */
+  z-index: 4;
 }
