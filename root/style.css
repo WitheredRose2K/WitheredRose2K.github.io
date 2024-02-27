@@ -1,7 +1,7 @@
 :root {
   --glitch-font-size: 3vw;
   --rose-font-size: 2vw;
-  --rose-position-bottom: -2vh;
+  --rose-position-bottom: min(-1.3vh, 14.04px);
   --rose-position-right: -0.05vw;
   --padding: 1vh 2vw;
   --text-shadow: 0 0 1vw rgba(255, 255, 255, 0.7);
