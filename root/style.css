@@ -4,7 +4,7 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(45deg, #0A0A0A, #1A1A1A);
+    background: #0A0A0A;
     color: #FFFFFF;
     overflow: hidden;
 }
@@ -27,29 +27,33 @@ body, html {
 }
 
 /* Heading styles */
+/* Heading styles */
 h1 {
     font-family: 'Cinzel', serif;
-    font-size: 5.5vw;
+    font-size: 4.5vw;
     margin-bottom: 0;
-    animation: fadeIn 2s ease-in-out;
-    color: #FFFFFF;
-    padding: 10px;
+    background: linear-gradient(135deg, 
+        rgba(120, 81, 169, 0.9), /* Primary color with high opacity */
+        rgba(177, 156, 217, 0.8) /* Secondary color with slightly lower opacity */
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 0.5vw;
     display: inline-block;
-    letter-spacing: 2px;
+    letter-spacing: 0.1vw;
     font-weight: bold;
     text-rendering: optimizeLegibility;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 
+        0 0 5px rgba(0, 0, 0, 0.5), /* Subtle dark shadow for depth */
+        0 0 10px rgba(120, 81, 169, 0.4), /* Mid-level shadow for a soft glow */
+        0 0 15px rgba(120, 81, 169, 0.2); /* Faintest shadow for a diffused effect */
 }
 
-/* Animation for heading */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
 
 /* Canvas background */
 #canvas-background {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -59,13 +63,25 @@ h1 {
 
 /* Tab bar styles */
 .tab-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.7);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    padding: 0.42vw 0;
+    box-shadow: 0 0.16vw 0.26vw rgba(0, 0, 0, 0.1);
+}
+
+.tab-bar a {
     color: #FFFFFF;
     text-decoration: none;
     padding: 0.42vw 0.83vw;
     margin: 0 0.42vw;
     font-size: 0.73vw;
     transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
-	backdrop-filter: blur(15px);
     border-bottom: 0.1vw solid transparent;
     position: relative;
     overflow: hidden;
