@@ -26,29 +26,19 @@ body, html {
 }
 
 /* Heading styles */
-/* Heading styles */
 h1 {
     font-family: 'Cinzel', serif;
-    font-size: 4.5vw;
+    font-size: 5.5vw;
     margin-bottom: 0;
-    background: linear-gradient(135deg, 
-        rgba(120, 81, 169, 0.9), /* Primary color with high opacity */
-        rgba(177, 156, 217, 0.8) /* Secondary color with slightly lower opacity */
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    padding: 0.5vw;
+    animation: fadeIn 2s ease-in-out;
+    color: #FFFFFF;
+    padding: 10px;
     display: inline-block;
-    letter-spacing: 0.1vw;
+    letter-spacing: 2px;
     font-weight: bold;
     text-rendering: optimizeLegibility;
-    text-shadow: 
-        0 0 5px rgba(0, 0, 0, 0.5), /* Subtle dark shadow for depth */
-        0 0 10px rgba(120, 81, 169, 0.4), /* Mid-level shadow for a soft glow */
-        0 0 15px rgba(120, 81, 169, 0.2); /* Faintest shadow for a diffused effect */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
 
 /* Canvas background */
 #canvas-background {
