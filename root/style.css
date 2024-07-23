@@ -4,7 +4,7 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: 'Roboto', sans-serif;
-    background: #0A0A0A;
+    background: linear-gradient(45deg, #0A0A0A, #1A1A1A);
     color: #FFFFFF;
     overflow: hidden;
 }
